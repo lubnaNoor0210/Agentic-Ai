@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: chainlit-crypto-agent
+    env: python
+    buildCommand: "uv pip install ."
+    startCommand: "chainlit run main.py -h 0.0.0.0 -p 10000"
+    envVars:
+      - key: GOOGLE_API_KEY
+        value: YOUR_GEMINI_API_KEY_HERE
+    plan: free
+    autoDeploy: true
